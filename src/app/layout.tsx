@@ -1,7 +1,15 @@
 import "./globals.css";
 import { ReactNode } from "react";
+import { Merriweather } from "next/font/google";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+
+const merriweather = Merriweather({
+  weight: ['300', '400', '700', '900'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-merriweather',
+});
 
 export const metadata = {
   title: "Anchored — What Your Kids Need To Know—And How To Talk About It",
@@ -79,17 +87,14 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   };
 
   return (
-    <html lang="en">
+    <html lang="en" className={merriweather.variable}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Inter:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-screen flex flex-col bg-background text-foreground">
+      <body className="min-h-screen flex flex-col bg-background text-foreground font-sans">
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />

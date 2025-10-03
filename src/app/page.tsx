@@ -69,8 +69,8 @@ export default function Home() {
             Parenting Teens Feels Overwhelming
           </h2>
           <p className="text-lg text-gray-300 leading-relaxed mb-6">
-            Between school, sports, friends, and screens, it's hard to find time for meaningful conversations.
-            You want to disciple your teen, but you're not sure where to start or what to say.
+            Between school, sports, friends, and screens, it&apos;s hard to find time for meaningful conversations.
+            You want to disciple your teen, but you&apos;re not sure where to start or what to say.
           </p>
           <p className="text-xl font-heading text-gold font-semibold mb-4">
             What if there was a simple framework to guide you?
@@ -119,7 +119,7 @@ export default function Home() {
               A Phased Approach That Grows With Your Teen
             </h2>
             <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-              Each stage builds on the last, meeting your teen's developmental needs
+              Each stage builds on the last, meeting your teen&apos;s developmental needs
               and preparing them for the next chapter of life.
             </p>
           </div>
