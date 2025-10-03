@@ -43,7 +43,7 @@ export default function ContactForm() {
         setStatus("error");
         setMessage("Something went wrong. Please try again.");
       }
-    } catch (error) {
+    } catch {
       setStatus("error");
       setMessage("Something went wrong. Please try again.");
     }

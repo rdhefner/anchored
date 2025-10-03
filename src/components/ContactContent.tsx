@@ -35,7 +35,7 @@ export default function ContactContent() {
             className="text-xl md:text-2xl text-gray-200 leading-relaxed"
           >
             Have questions or feedback? Want to discuss bulk orders?
-            We'd love to hear from you.
+            We&apos;d love to hear from you.
           </motion.p>
         </div>
       </section>
@@ -50,8 +50,8 @@ export default function ContactContent() {
                 Send Us a Message
               </h2>
               <p className="text-gray-300 mb-8 leading-relaxed">
-                Fill out the form below and we'll get back to you as soon as possible.
-                If you'd like to receive updates about Anchored, check the box below.
+                Fill out the form below and we&apos;ll get back to you as soon as possible.
+                If you&apos;d like to receive updates about Anchored, check the box below.
               </p>
               <ContactForm />
             </div>
@@ -81,7 +81,7 @@ export default function ContactContent() {
                   </h4>
                   <p className="text-gray-300 text-sm leading-relaxed">
                     Have questions about how to use Anchored, which book to start with,
-                    or want to share your story? We'd love to hear from you!
+                    or want to share your story? We&apos;d love to hear from you!
                   </p>
                 </div>
 
@@ -91,7 +91,7 @@ export default function ContactContent() {
                     Feedback & Testimonials
                   </h4>
                   <p className="text-gray-300 text-sm leading-relaxed">
-                    Using Anchored with your teen? We'd love to hear how it's going and
+                    Using Anchored with your teen? We&apos;d love to hear how it&apos;s going and
                     how we can continue to improve and serve families like yours.
                   </p>
                 </div>
@@ -115,7 +115,7 @@ export default function ContactContent() {
             Ready to Get Started?
           </h2>
           <p className="text-gray-200 text-lg mb-8">
-            Don't wait for the perfect moment. Start building an anchored foundation today.
+            Don&apos;t wait for the perfect moment. Start building an anchored foundation today.
           </p>
           <a
             href={process.env.NEXT_PUBLIC_AMAZON_SERIES_LINK || "https://amazon.com"}

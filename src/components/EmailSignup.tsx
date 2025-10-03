@@ -34,7 +34,7 @@ export default function EmailSignup() {
         setStatus("error");
         setMessage("Something went wrong. Please try again.");
       }
-    } catch (error) {
+    } catch {
       setStatus("error");
       setMessage("Something went wrong. Please try again.");
     }

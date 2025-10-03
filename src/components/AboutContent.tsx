@@ -79,7 +79,7 @@ export default function AboutContent() {
             className="text-xl md:text-2xl text-gray-200 leading-relaxed"
           >
             Anchored gives you a simple, flexible framework to intentionally
-            disciple your teen—no matter where you're starting from.
+            disciple your teen—no matter where you&apos;re starting from.
           </motion.p>
         </div>
       </section>
@@ -102,7 +102,7 @@ export default function AboutContent() {
           <div className="mt-16 max-w-3xl mx-auto text-center">
             <p className="text-lg text-gray-700 leading-relaxed mb-4">
               Each stage includes the same 40+ topics, but the content deepens and
-              evolves to match your teen's growing maturity, questions, and real-world challenges.
+              evolves to match your teen&apos;s growing maturity, questions, and real-world challenges.
             </p>
             <p className="text-xl font-heading font-semibold text-gold">
               Start where you are. Go at your own pace. Make it fit your family.
@@ -147,7 +147,7 @@ export default function AboutContent() {
             </h2>
             <p className="text-lg text-gray-300 max-w-3xl mx-auto">
               See how a single topic—like emotions—evolves across all three stages
-              to match your teen's maturity and real-world challenges.
+              to match your teen&apos;s maturity and real-world challenges.
             </p>
           </div>
 
@@ -163,8 +163,8 @@ export default function AboutContent() {
               Make It Work for Your Family
             </h2>
             <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-              There's no "right way" to use Anchored. Choose the approach that fits your schedule,
-              your teen's personality, and your family's rhythm.
+              There&apos;s no &ldquo;right way&rdquo; to use Anchored. Choose the approach that fits your schedule,
+              your teen&apos;s personality, and your family&apos;s rhythm.
             </p>
           </div>
 
@@ -195,7 +195,7 @@ export default function AboutContent() {
                 </tr>
                 <tr className="hover:bg-gray-50">
                   <td className="px-6 py-4 font-semibold text-navy-900">Mix & Match</td>
-                  <td className="px-6 py-4 text-gray-700">Combining approaches based on the season you're in</td>
+                  <td className="px-6 py-4 text-gray-700">Combining approaches based on the season you&apos;re in</td>
                 </tr>
               </tbody>
             </table>
@@ -257,7 +257,7 @@ export default function AboutContent() {
               relationships, and the world that will shape the rest of their life.
             </p>
             <p>
-              But between busy schedules, cultural pressures, and the digital world, it's easy
+              But between busy schedules, cultural pressures, and the digital world, it&apos;s easy
               to let these years slip by without the intentional conversations they need.
             </p>
             <p className="font-semibold text-gold text-xl">

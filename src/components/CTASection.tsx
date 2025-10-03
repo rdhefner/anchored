@@ -16,7 +16,7 @@ export default function CTASection({ amazonLink = "https://amazon.com" }: CTASec
     >
       <div className="max-w-3xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6 leading-tight">
-          You don't have to be a perfect parent to disciple your teen.
+          You don&apos;t have to be a perfect parent to disciple your teen.
         </h2>
         <p className="text-2xl md:text-3xl font-heading text-gold mb-8">
           You just have to start.
