@@ -2,6 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import useEmblaCarousel from "embla-carousel-react";
 import StageTimeline from "./StageTimeline";
 import FocusAreaCard from "./FocusAreaCard";
 import TopicPreview from "./TopicPreview";
@@ -11,6 +12,11 @@ import { FaBook, FaUsers, FaTools, FaStar, FaGlobe } from "react-icons/fa";
 
 export default function AboutContent() {
   const amazonLink = process.env.NEXT_PUBLIC_AMAZON_SERIES_LINK || "https://amazon.com";
+  const [emblaRef] = useEmblaCarousel({
+    loop: false,
+    align: 'start',
+    containScroll: 'trimSnaps'
+  });
 
   const focusAreas = [
     {
@@ -116,15 +122,41 @@ export default function AboutContent() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
-              5 Focus Areas Cover Everything
+              5 Focus Areas for Well-Rounded Growth
             </h2>
             <p className="text-lg text-gray-200 max-w-3xl mx-auto">
-              Every essential topic your teen needs falls into one of these five categories,
-              creating a holistic discipleship approach.
+              These five categories provide a comprehensive framework for discipling your teen,
+              addressing the key areas of life and faith.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Mobile: Carousel */}
+          <div className="md:hidden">
+            <div className="overflow-hidden" ref={emblaRef}>
+              <div className="flex gap-4 items-stretch">
+                {focusAreas.map((area, index) => (
+                  <div key={area.title} className="flex-[0_0_85%] min-w-0 flex">
+                    <div className="w-full">
+                      <FocusAreaCard
+                        icon={area.icon}
+                        title={area.title}
+                        description={area.description}
+                        index={index}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="flex justify-center gap-2 mt-6">
+              {focusAreas.map((_, index) => (
+                <div key={index} className="w-2 h-2 rounded-full bg-white/40"></div>
+              ))}
+            </div>
+          </div>
+
+          {/* Desktop: Grid */}
+          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {focusAreas.map((area, index) => (
               <FocusAreaCard
                 key={area.title}

@@ -1,4 +1,5 @@
 "use client";
+import useEmblaCarousel from "embla-carousel-react";
 import Hero from "../components/Hero";
 import BookSeriesShowcase from "../components/BookSeriesShowcase";
 import FocusAreaCard from "../components/FocusAreaCard";
@@ -11,6 +12,11 @@ import { FaBook, FaUsers, FaTools, FaStar, FaGlobe } from "react-icons/fa";
 
 export default function Home() {
   const amazonLink = process.env.NEXT_PUBLIC_AMAZON_SERIES_LINK || "https://amazon.com";
+  const [emblaRef] = useEmblaCarousel({
+    loop: false,
+    align: 'start',
+    containScroll: 'trimSnaps'
+  });
 
   const focusAreas = [
     {
@@ -141,7 +147,33 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Mobile: Carousel */}
+          <div className="md:hidden">
+            <div className="overflow-hidden" ref={emblaRef}>
+              <div className="flex gap-4 items-stretch">
+                {focusAreas.map((area, index) => (
+                  <div key={area.title} className="flex-[0_0_85%] min-w-0 flex">
+                    <div className="w-full">
+                      <FocusAreaCard
+                        icon={area.icon}
+                        title={area.title}
+                        description={area.description}
+                        index={index}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="flex justify-center gap-2 mt-6">
+              {focusAreas.map((_, index) => (
+                <div key={index} className="w-2 h-2 rounded-full bg-white/40"></div>
+              ))}
+            </div>
+          </div>
+
+          {/* Desktop: Grid */}
+          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {focusAreas.map((area, index) => (
               <FocusAreaCard
                 key={area.title}

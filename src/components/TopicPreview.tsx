@@ -316,8 +316,10 @@ Key skills for managing emotions:
                           <h4 className="font-bold text-navy-900 text-sm">{section.heading}</h4>
                           <div className={`text-gray-700 text-sm leading-relaxed ${section.type === 'reflect' ? 'italic' : ''}`}>
                             {section.content.split('\n').map((line, lineIdx) => {
-                              if (line.trim().startsWith('•')) {
-                                const bulletText = line.trim().substring(1).trim();
+                              const trimmedLine = line.trim();
+
+                              if (trimmedLine.startsWith('•')) {
+                                const bulletText = trimmedLine.substring(1).trim();
                                 const dashIndex = bulletText.indexOf(' - ');
                                 if (dashIndex > -1) {
                                   const title = bulletText.substring(0, dashIndex);
@@ -337,19 +339,32 @@ Key skills for managing emotions:
                                     <span>{bulletText}</span>
                                   </div>
                                 );
-                              } else if (line.trim().startsWith('💡 Think of it this way:')) {
+                              } else if (trimmedLine.startsWith('💡 Think of it this way:')) {
                                 return (
                                   <div key={lineIdx} className="mt-3 mb-1">
                                     <span className="font-semibold">💡 Think of it this way:</span>
-                                    <span> {line.trim().replace('💡 Think of it this way:', '').trim()}</span>
+                                    <span> {trimmedLine.replace('💡 Think of it this way:', '').trim()}</span>
                                   </div>
                                 );
-                              } else if (line.trim().endsWith(':')) {
+                              } else if (trimmedLine.endsWith(':') && (
+                                trimmedLine.startsWith('Key') ||
+                                trimmedLine.startsWith('Core') ||
+                                trimmedLine.startsWith('Healthy') ||
+                                trimmedLine.startsWith('Important') ||
+                                trimmedLine.includes('truths:') ||
+                                trimmedLine.includes('emotions:') ||
+                                trimmedLine.includes('methods:') ||
+                                trimmedLine.includes('reminders:') ||
+                                trimmedLine.includes('triggers:') ||
+                                trimmedLine.includes('skills:')
+                              )) {
                                 return (
                                   <div key={lineIdx} className="font-semibold mt-3 mb-1">
                                     {line}
                                   </div>
                                 );
+                              } else if (trimmedLine === '') {
+                                return <div key={lineIdx} className="h-3"></div>;
                               }
                               return <div key={lineIdx}>{line}</div>;
                             })}
@@ -383,8 +398,10 @@ Key skills for managing emotions:
                           {section.afterTable && (
                             <div className="text-gray-700 text-sm leading-relaxed mt-4">
                               {section.afterTable.split('\n').map((line, lineIdx) => {
-                                if (line.trim().startsWith('•')) {
-                                  const bulletText = line.trim().substring(1).trim();
+                                const trimmedLine = line.trim();
+
+                                if (trimmedLine.startsWith('•')) {
+                                  const bulletText = trimmedLine.substring(1).trim();
                                   const dashIndex = bulletText.indexOf(' - ');
                                   if (dashIndex > -1) {
                                     const title = bulletText.substring(0, dashIndex);
@@ -404,19 +421,32 @@ Key skills for managing emotions:
                                       <span>{bulletText}</span>
                                     </div>
                                   );
-                                } else if (line.trim().startsWith('💡 Think of it this way:')) {
+                                } else if (trimmedLine.startsWith('💡 Think of it this way:')) {
                                   return (
                                     <div key={lineIdx} className="mt-3 mb-1">
                                       <span className="font-semibold">💡 Think of it this way:</span>
-                                      <span> {line.trim().replace('💡 Think of it this way:', '').trim()}</span>
+                                      <span> {trimmedLine.replace('💡 Think of it this way:', '').trim()}</span>
                                     </div>
                                   );
-                                } else if (line.trim().endsWith(':')) {
+                                } else if (trimmedLine.endsWith(':') && (
+                                  trimmedLine.startsWith('Key') ||
+                                  trimmedLine.startsWith('Core') ||
+                                  trimmedLine.startsWith('Healthy') ||
+                                  trimmedLine.startsWith('Important') ||
+                                  trimmedLine.includes('truths:') ||
+                                  trimmedLine.includes('emotions:') ||
+                                  trimmedLine.includes('methods:') ||
+                                  trimmedLine.includes('reminders:') ||
+                                  trimmedLine.includes('triggers:') ||
+                                  trimmedLine.includes('skills:')
+                                )) {
                                   return (
                                     <div key={lineIdx} className="font-semibold mt-3 mb-1">
                                       {line}
                                     </div>
                                   );
+                                } else if (trimmedLine === '') {
+                                  return <div key={lineIdx} className="h-3"></div>;
                                 }
                                 return <div key={lineIdx}>{line}</div>;
                               })}
