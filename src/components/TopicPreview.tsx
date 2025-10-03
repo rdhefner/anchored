@@ -3,8 +3,26 @@ import { motion } from "framer-motion";
 import { Disclosure } from "@headlessui/react";
 import { FiChevronDown } from "react-icons/fi";
 
+interface Section {
+  type: string;
+  heading: string;
+  content: string;
+  table?: {
+    headers: string[];
+    rows: string[][];
+  };
+  afterTable?: string;
+}
+
+interface StageExample {
+  stage: string;
+  scripture: string;
+  theme: string;
+  sections: Section[];
+}
+
 export default function TopicPreview() {
-  const emotionsExample = [
+  const emotionsExample: StageExample[] = [
     {
       stage: "Launch (12-14)",
       scripture: "May the God of hope fill you with all joy and peace in believing, so that by the power of the Holy Spirit you may abound in hope. —Romans 15:13",
