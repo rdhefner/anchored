@@ -17,7 +17,7 @@ export default function TestimonialCard({ quote, author, role, index }: Testimon
       viewport={{ once: true }}
       className="bg-white p-6 rounded-lg shadow-lg border-l-4 border-gold"
     >
-      <div className="text-gold text-4xl mb-2">"</div>
+      <div className="text-gold text-4xl mb-2">&ldquo;</div>
       <p className="text-gray-700 italic mb-4 leading-relaxed">
         {quote}
       </p>

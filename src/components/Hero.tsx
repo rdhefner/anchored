@@ -49,7 +49,7 @@ export default function Hero() {
           className="bg-white/10 backdrop-blur-md border border-gold/30 rounded-2xl p-8 max-w-3xl mx-auto mb-10"
         >
           <p className="text-2xl md:text-4xl font-heading font-bold text-white leading-tight mb-4">
-            You don't have to be a perfect parent to disciple your teen.
+            You don&apos;t have to be a perfect parent to disciple your teen.
           </p>
           <p className="text-3xl md:text-5xl font-heading font-bold text-gold">
             You just have to start.

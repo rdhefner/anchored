@@ -161,7 +161,7 @@ export default function SeriesContent() {
                 </h4>
                 <p className="text-gray-300 leading-relaxed mb-4">
                   The Launch stage focuses on establishing core beliefs and opening up
-                  communication. It's about creating a safe space for questions and
+                  communication. It&apos;s about creating a safe space for questions and
                   starting conversations that will deepen over time.
                 </p>
                 <p className="text-gray-300 leading-relaxed">
@@ -194,7 +194,7 @@ export default function SeriesContent() {
                 </h4>
                 <p className="text-gray-300 leading-relaxed mb-4">
                   The Navigate stage takes conversations deeper, addressing more complex
-                  questions and real-world challenges. It's about equipping teens to think
+                  questions and real-world challenges. It&apos;s about equipping teens to think
                   critically and apply biblical wisdom to everyday situations.
                 </p>
                 <p className="text-gray-300 leading-relaxed">
@@ -249,7 +249,7 @@ export default function SeriesContent() {
             </h2>
             <p className="text-lg text-gray-300 max-w-3xl mx-auto">
               Every topic appears in all three books, but the content evolves to match
-              your teen's developmental stage and real-world needs.
+              your teen&apos;s developmental stage and real-world needs.
             </p>
           </div>
 

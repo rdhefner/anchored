@@ -269,7 +269,7 @@ Key skills for managing emotions:
         </div>
 
         <div className="p-6 space-y-4">
-          {emotionsExample.map((stage, index) => (
+          {emotionsExample.map((stage) => (
             <Disclosure key={stage.stage}>
               {({ open }) => (
                 <div className="border-2 border-gray-200 rounded-lg overflow-hidden">
@@ -287,7 +287,7 @@ Key skills for managing emotions:
                       </div>
                       <div>
                         <div className="text-sm font-semibold text-navy-900">Scripture anchor:</div>
-                        <div className="text-sm text-gray-700 italic">"{stage.scripture.split('—')[0].trim()}"</div>
+                        <div className="text-sm text-gray-700 italic">&ldquo;{stage.scripture.split('—')[0].trim()}&rdquo;</div>
                         <div className="text-sm text-gray-700 text-right">—{stage.scripture.split('—')[1]}</div>
                       </div>
                       <div className="border-t border-gray-300 my-4"></div>
