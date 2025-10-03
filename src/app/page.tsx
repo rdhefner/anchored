@@ -1,103 +1,216 @@
-import Image from "next/image";
+"use client";
+import Hero from "../components/Hero";
+import BookSeriesShowcase from "../components/BookSeriesShowcase";
+import FocusAreaCard from "../components/FocusAreaCard";
+import StageTimeline from "../components/StageTimeline";
+import TestimonialCard from "../components/TestimonialCard";
+import ScriptureCallout from "../components/ScriptureCallout";
+import CTASection from "../components/CTASection";
+import EmailSignup from "../components/EmailSignup";
+import { FaBook, FaUsers, FaTools, FaStar, FaGlobe } from "react-icons/fa";
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const amazonLink = process.env.NEXT_PUBLIC_AMAZON_SERIES_LINK || "https://amazon.com";
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  const focusAreas = [
+    {
+      icon: FaBook,
+      title: "Foundations",
+      description: "Build core beliefs about God, faith, and develop healthy habits for emotional and physical wellbeing."
+    },
+    {
+      icon: FaUsers,
+      title: "Relationships",
+      description: "Navigate trust, conflict, empathy, and romance with wisdom and healthy boundaries."
+    },
+    {
+      icon: FaTools,
+      title: "Life Skills",
+      description: "Master practical abilities for managing money, home, food, and resourceful living."
+    },
+    {
+      icon: FaStar,
+      title: "Leadership",
+      description: "Cultivate discernment, goals, decision-making, and time management for lasting impact."
+    },
+    {
+      icon: FaGlobe,
+      title: "Society",
+      description: "Engage wisely with culture, global issues, apologetics, and civic responsibility."
+    }
+  ];
+
+  const testimonials = [
+    {
+      quote: "This is exactly what I needed as a parent. The topics are relevant, the approach is flexible, and it's helping me have conversations I never thought I could have.",
+      author: "Parent of a 14-year-old",
+      role: "Launch Series"
+    },
+    {
+      quote: "Anchored gave me a roadmap for discipling my teens. I'm not perfect at it, but I finally feel equipped and confident to start.",
+      author: "Parent of three",
+      role: "Complete Series"
+    },
+    {
+      quote: "The phased approach is brilliant. It grows with my child and meets them exactly where they are developmentally.",
+      author: "Mom of two teens",
+      role: "Navigate Series"
+    }
+  ];
+
+  return (
+    <>
+      <Hero />
+
+      {/* Problem/Solution Section */}
+      <section className="py-20 px-6 bg-navy-900">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-6">
+            Parenting Teens Feels Overwhelming
+          </h2>
+          <p className="text-lg text-gray-300 leading-relaxed mb-6">
+            Between school, sports, friends, and screens, it's hard to find time for meaningful conversations.
+            You want to disciple your teen, but you're not sure where to start or what to say.
+          </p>
+          <p className="text-xl font-heading text-gold font-semibold mb-4">
+            What if there was a simple framework to guide you?
+          </p>
+          <p className="text-lg text-gray-300 leading-relaxed">
+            <span className="font-bold text-gold">Anchored</span> gives you over 40 essential topics,
+            organized by age and life stage, so you can have the conversations that matter most—
+            without feeling like you need a theology degree or parenting manual.
+          </p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+
+      {/* 3-Book Series Showcase */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-5xl font-heading font-bold text-navy-900 mb-4">
+              The Complete Anchored Series
+            </h2>
+            <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+              Three books. Three developmental stages. One comprehensive framework
+              that grows with your teen from ages 12 to 18+.
+            </p>
+          </div>
+
+          <BookSeriesShowcase />
+
+          <div className="text-center mt-12">
+            <a
+              href={amazonLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-10 py-4 bg-gold text-navy-900 rounded-full font-bold text-xl shadow-2xl hover:bg-gold-light transition-all duration-300 hover:scale-105"
+            >
+              Get All 3 Books on Amazon
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* 3 Stages Timeline */}
+      <section className="py-20 px-6 bg-navy-900">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
+              A Phased Approach That Grows With Your Teen
+            </h2>
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+              Each stage builds on the last, meeting your teen's developmental needs
+              and preparing them for the next chapter of life.
+            </p>
+          </div>
+
+          <StageTimeline />
+        </div>
+      </section>
+
+      {/* 5 Focus Areas */}
+      <section className="py-20 px-6 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 text-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
+              5 Essential Focus Areas
+            </h2>
+            <p className="text-lg text-gray-200 max-w-3xl mx-auto">
+              Every topic in Anchored falls into one of these categories,
+              giving you a complete discipleship framework.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {focusAreas.map((area, index) => (
+              <FocusAreaCard
+                key={area.title}
+                icon={area.icon}
+                title={area.title}
+                description={area.description}
+                index={index}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Scripture Foundation */}
+      <section className="py-20 px-6 bg-navy-900">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
+              Rooted in Scripture
+            </h2>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-8">
+              Anchored is built on the timeless command to intentionally pass faith
+              to the next generation through everyday conversations.
+            </p>
+          </div>
+
+          <ScriptureCallout />
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-20 px-6 bg-navy-900">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
+              What Parents Are Saying
+            </h2>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+              Real stories from parents who are using Anchored to disciple their teens.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {testimonials.map((testimonial, index) => (
+              <TestimonialCard
+                key={index}
+                quote={testimonial.quote}
+                author={testimonial.author}
+                role={testimonial.role}
+                index={index}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Main CTA Section */}
+      <section className="py-20 px-6 bg-navy-900">
+        <div className="max-w-6xl mx-auto">
+          <CTASection amazonLink={amazonLink} />
+        </div>
+      </section>
+
+      {/* Email Signup */}
+      <section className="py-20 px-6 bg-navy-900">
+        <div className="max-w-6xl mx-auto">
+          <EmailSignup />
+        </div>
+      </section>
+    </>
   );
 }

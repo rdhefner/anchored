@@ -1,26 +1,73 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Root tokens - Launch theme colors */
+:root{
+  --background: #032735;
+  --foreground: #ffffff;
+  --brand-primary: #032735;
+  --brand-secondary: #0b333a;
+  --brand-gold: #c26d2e;
+  --brand-gold-light: #ffa766;
+  --brand-light-gray: #F8FAFC;
+  --font-title: "Merriweather", serif;
+  --font-heading: "Merriweather", serif;
+  --font-body: "Merriweather", serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
+/* Keep consistent colors in dark mode */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #032735;
+    --foreground: #ffffff;
   }
 }
 
-body {
+/* Connect CSS tokens to Tailwind theme inline usage */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-secondary: var(--brand-secondary);
+  --color-brand-gold: var(--brand-gold);
+  --color-brand-light-gray: var(--brand-light-gray);
+
+  /* Navy colors */
+  --color-navy-900: #032735;
+  --color-navy-800: #0b333a;
+  --color-navy-700: #183c2b;
+
+  /* Gold/Copper colors */
+  --color-gold: #c26d2e;
+  --color-gold-light: #ffa766;
+  --color-gold-anchor: #ffc983;
+
+  /* Launch colors */
+  --color-launch-bg: #032735;
+  --color-launch-text: #c26d2e;
+  --color-launch-accent: #ffa766;
+
+  /* Navigate colors */
+  --color-navigate-bg: #0b333a;
+  --color-navigate-text: #bfbc92;
+  --color-navigate-accent: #f7f4d1;
+
+  /* Anchor colors */
+  --color-anchor-bg: #183c2b;
+  --color-anchor-text: #d38c31;
+  --color-anchor-accent: #ffc983;
+}
+
+/* Minimal global styles */
+html, body, #__next {
+  height: 100%;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Utility helpers for headings (can also use Tailwind classes) */
+h1,h2,h3,h4,h5 {
+  font-family: var(--font-heading);
 }
