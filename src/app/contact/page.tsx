@@ -6,7 +6,7 @@ export const metadata = {
   openGraph: {
     title: "Contact Us | Anchored",
     description: "Get in touch with us about bulk orders, speaking engagements, or questions about the Anchored series.",
-    url: 'https://anchoredparenting.com/contact',
+    url: 'https://anchoredkids.org/contact',
   },
   alternates: {
     canonical: '/contact',

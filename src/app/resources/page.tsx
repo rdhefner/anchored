@@ -6,7 +6,7 @@ export const metadata = {
   openGraph: {
     title: "Resources | Anchored",
     description: "Recommended books and resources for each stage of the Anchored framework to support your teen's growth and development.",
-    url: 'https://anchoredparenting.com/resources',
+    url: 'https://anchoredkids.org/resources',
   },
   alternates: {
     canonical: '/resources',

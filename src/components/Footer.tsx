@@ -85,10 +85,15 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-gold/20 mt-8 pt-6 text-center">
-          <p className="text-sm text-gray-400">
-            © {new Date().getFullYear()} Anchored, LLC. All rights reserved.
-          </p>
+        <div className="border-t border-gold/20 mt-8 pt-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-sm text-gray-400">
+              © {new Date().getFullYear()} Anchored, LLC. All rights reserved.
+            </p>
+            <Link href="/about-author" className="text-sm text-gray-400 hover:text-gold transition-colors">
+              Our Story
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

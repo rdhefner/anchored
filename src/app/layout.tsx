@@ -30,14 +30,14 @@ export const metadata = {
   authors: [{ name: "Anchored" }],
   creator: "Anchored, LLC",
   publisher: "Anchored, LLC",
-  metadataBase: new URL('https://anchoredparenting.com'),
+  metadataBase: new URL('https://anchoredkids.org'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: "Anchored — What Your Kids Need To Know—And How To Talk About It",
     description: "A 3-book parenting series for intentional discipleship. You don't have to be a perfect parent to disciple your teen. You just have to start.",
-    url: 'https://anchoredparenting.com',
+    url: 'https://anchoredkids.org',
     siteName: 'Anchored',
     images: [
       {
@@ -75,13 +75,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     '@type': 'WebSite',
     name: 'Anchored',
     description: 'A 3-book parenting series for intentional discipleship',
-    url: 'https://anchoredparenting.com',
+    url: 'https://anchoredkids.org',
     publisher: {
       '@type': 'Organization',
       name: 'Anchored, LLC',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://anchoredparenting.com/favicon.png',
+        url: 'https://anchoredkids.org/favicon.png',
       },
     },
   };

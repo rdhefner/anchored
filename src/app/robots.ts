@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://anchoredparenting.com/sitemap.xml',
+    sitemap: 'https://anchoredkids.org/sitemap.xml',
   }
 }
