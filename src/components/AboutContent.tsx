@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
 import { Disclosure } from "@headlessui/react";
 import { FiChevronDown } from "react-icons/fi";
-import StageTimeline from "./StageTimeline";
 import FocusAreaCard from "./FocusAreaCard";
 import TopicPreview from "./TopicPreview";
 import ScriptureCallout from "./ScriptureCallout";
@@ -166,33 +165,27 @@ export default function AboutContent() {
         </div>
       </section>
 
-      {/* The Framework Explained */}
-      <section className="py-20 px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-navy-900 mb-4">
+      {/* The Anchored Framework */}
+      <section className="py-20 px-6 bg-navy-900">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
               The Anchored Framework
             </h2>
-            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
               Three books. Three developmental stages. One comprehensive approach
               that meets your teen exactly where they are.
             </p>
           </div>
 
-          <StageTimeline />
-        </div>
-      </section>
-
-      {/* Individual Book Descriptions */}
-      <section className="py-20 px-6 bg-navy-900">
-        <div className="max-w-5xl mx-auto space-y-12">
-          {/* Launch Book */}
+          <div className="space-y-12">
+            {/* Launch Book */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-navy-800 rounded-xl shadow-lg overflow-hidden border border-gold/20"
+            className="bg-white rounded-xl shadow-xl overflow-hidden border-2 border-gray-200"
           >
             <div className="md:flex">
               <div className="md:w-1/3 bg-gradient-to-br from-gold to-gold-light p-8 flex items-center justify-center border-r border-gold/20">
@@ -201,16 +194,16 @@ export default function AboutContent() {
                   <p className="text-navy-900 text-lg font-semibold">Ages 12-14</p>
                 </div>
               </div>
-              <div className="md:w-2/3 p-8">
+              <div className="md:w-2/3 p-8 bg-navy-900">
                 <h4 className="text-2xl font-heading font-bold text-white mb-4">
                   Building the Foundation
                 </h4>
-                <p className="text-gray-300 leading-relaxed mb-4">
+                <p className="text-gray-200 leading-relaxed mb-4">
                   The Launch stage focuses on establishing core beliefs and opening up
                   communication. It&apos;s about creating a safe space for questions and
                   starting conversations that will deepen over time.
                 </p>
-                <p className="text-gray-300 leading-relaxed">
+                <p className="text-gray-200 leading-relaxed">
                   Perfect for early teens who are beginning to form their own beliefs
                   and need guidance navigating new social dynamics, emotions, and faith questions.
                 </p>
@@ -224,25 +217,25 @@ export default function AboutContent() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-navy-900 rounded-xl shadow-lg overflow-hidden border border-gold/20"
+            className="bg-white rounded-xl shadow-xl overflow-hidden border-2 border-gray-200"
           >
             <div className="md:flex md:flex-row-reverse">
-              <div className="md:w-1/3 bg-gradient-to-br from-navigate-text to-navigate-accent p-8 flex items-center justify-center border-l border-gold/20">
+              <div className="md:w-1/3 bg-gradient-to-br from-navigate-text to-navigate-accent p-8 flex items-center justify-center border-l border-navigate-text/20">
                 <div className="text-center">
                   <h3 className="text-4xl font-heading font-bold text-navy-900 mb-2">Navigate</h3>
                   <p className="text-navy-900 text-lg font-semibold">Ages 14-16</p>
                 </div>
               </div>
-              <div className="md:w-2/3 p-8">
+              <div className="md:w-2/3 p-8 bg-navy-800">
                 <h4 className="text-2xl font-heading font-bold text-white mb-4">
                   Going Deeper
                 </h4>
-                <p className="text-gray-300 leading-relaxed mb-4">
+                <p className="text-gray-200 leading-relaxed mb-4">
                   The Navigate stage takes conversations deeper, addressing more complex
                   questions and real-world challenges. It&apos;s about equipping teens to think
                   critically and apply biblical wisdom to everyday situations.
                 </p>
-                <p className="text-gray-300 leading-relaxed">
+                <p className="text-gray-200 leading-relaxed">
                   Ideal for mid-teens who are facing increased independence, peer pressure,
                   dating questions, and need tools to navigate their expanding world.
                 </p>
@@ -256,31 +249,32 @@ export default function AboutContent() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-navy-800 rounded-xl shadow-lg overflow-hidden border border-gold/20"
+            className="bg-white rounded-xl shadow-xl overflow-hidden border-2 border-gray-200"
           >
             <div className="md:flex">
-              <div className="md:w-1/3 bg-anchor-bg p-8 flex items-center justify-center border-r border-gold/20">
+              <div className="md:w-1/3 bg-anchor-bg p-8 flex items-center justify-center border-r border-anchor-bg/20">
                 <div className="text-center">
                   <h3 className="text-4xl font-heading font-bold text-anchor-text mb-2">Anchor</h3>
                   <p className="text-white text-lg font-semibold">Ages 16-18+</p>
                 </div>
               </div>
-              <div className="md:w-2/3 p-8">
+              <div className="md:w-2/3 p-8 bg-navy-900">
                 <h4 className="text-2xl font-heading font-bold text-white mb-4">
                   Ready for Adulthood
                 </h4>
-                <p className="text-gray-300 leading-relaxed mb-4">
+                <p className="text-gray-200 leading-relaxed mb-4">
                   The Anchor stage prepares teens for life beyond home. It addresses
                   college, career, relationships, and how to maintain faith in a
                   rapidly changing world with confidence and conviction.
                 </p>
-                <p className="text-gray-300 leading-relaxed">
+                <p className="text-gray-200 leading-relaxed">
                   Essential for older teens preparing to leave home, face new freedoms,
                   and need to solidify their beliefs before stepping into adulthood.
                 </p>
               </div>
             </div>
           </motion.div>
+          </div>
         </div>
       </section>
 
