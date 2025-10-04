@@ -3,7 +3,6 @@ import useEmblaCarousel from "embla-carousel-react";
 import Hero from "../components/Hero";
 import BookSeriesShowcase from "../components/BookSeriesShowcase";
 import FocusAreaCard from "../components/FocusAreaCard";
-import StageTimeline from "../components/StageTimeline";
 import TestimonialCard from "../components/TestimonialCard";
 import ScriptureCallout from "../components/ScriptureCallout";
 import CTASection from "../components/CTASection";
@@ -72,7 +71,7 @@ export default function Home() {
       <section className="py-20 px-6 bg-navy-900">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-6">
-            Parenting Teens Feels Overwhelming
+            Parenting Teens Can Feel Overwhelming
           </h2>
           <p className="text-lg text-gray-300 leading-relaxed mb-6">
             Between school, sports, friends, and screens, it&apos;s hard to find time for meaningful conversations.
@@ -114,23 +113,6 @@ export default function Home() {
               Get All 3 Books on Amazon
             </a>
           </div>
-        </div>
-      </section>
-
-      {/* 3 Stages Timeline */}
-      <section className="py-20 px-6 bg-navy-900">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-              A Phased Approach That Grows With Your Teen
-            </h2>
-            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-              Each stage builds on the last, meeting your teen&apos;s developmental needs
-              and preparing them for the next chapter of life.
-            </p>
-          </div>
-
-          <StageTimeline />
         </div>
       </section>
 

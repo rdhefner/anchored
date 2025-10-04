@@ -3,6 +3,8 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
+import { Disclosure } from "@headlessui/react";
+import { FiChevronDown } from "react-icons/fi";
 import StageTimeline from "./StageTimeline";
 import FocusAreaCard from "./FocusAreaCard";
 import TopicPreview from "./TopicPreview";
@@ -43,6 +45,80 @@ export default function AboutContent() {
       icon: FaGlobe,
       title: "Society",
       description: "Engage wisely with culture, global issues, apologetics, and civic responsibility."
+    }
+  ];
+
+  const topicsByFocusArea = [
+    {
+      area: "Foundations",
+      topics: [
+        "Core Beliefs of the Christian Faith",
+        "Christian Living",
+        "Emotions",
+        "Stress",
+        "Discipline",
+        "Patience",
+        "Health Basics",
+        "Exercise",
+        "Nutrition",
+        "Self-Reflection",
+        "Rest",
+        "Leisure"
+      ]
+    },
+    {
+      area: "Relationships",
+      topics: [
+        "Relationship Basics",
+        "Trust",
+        "Emotional Intelligence and Empathy",
+        "Conflict",
+        "Peer Pressure",
+        "Men and Women",
+        "Romance",
+        "Solitude"
+      ]
+    },
+    {
+      area: "Life Skills",
+      topics: [
+        "Money Basics",
+        "Budgeting",
+        "Saving and Investing",
+        "Giving",
+        "Food",
+        "Cooking",
+        "Home Basics",
+        "Vehicle Maintenance",
+        "Resourceful Living",
+        "Change",
+        "Learning",
+        "Safety"
+      ]
+    },
+    {
+      area: "Leadership",
+      topics: [
+        "Leadership Basics",
+        "Goals",
+        "Discernment and Wisdom",
+        "Research",
+        "Decision Making",
+        "Perseverance",
+        "Time Management",
+        "Career"
+      ]
+    },
+    {
+      area: "Society",
+      topics: [
+        "Culture",
+        "Global Issues",
+        "Apologetics",
+        "Debate",
+        "Stewardship",
+        "Government and Politics"
+      ]
     }
   ];
 
@@ -104,15 +180,160 @@ export default function AboutContent() {
           </div>
 
           <StageTimeline />
+        </div>
+      </section>
 
-          <div className="mt-16 max-w-3xl mx-auto text-center">
-            <p className="text-lg text-gray-700 leading-relaxed mb-4">
-              Each stage includes the same 40+ topics, but the content deepens and
-              evolves to match your teen&apos;s growing maturity, questions, and real-world challenges.
+      {/* Individual Book Descriptions */}
+      <section className="py-20 px-6 bg-navy-900">
+        <div className="max-w-5xl mx-auto space-y-12">
+          {/* Launch Book */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="bg-navy-800 rounded-xl shadow-lg overflow-hidden border border-gold/20"
+          >
+            <div className="md:flex">
+              <div className="md:w-1/3 bg-gradient-to-br from-gold to-gold-light p-8 flex items-center justify-center border-r border-gold/20">
+                <div className="text-center">
+                  <h3 className="text-4xl font-heading font-bold text-navy-900 mb-2">Launch</h3>
+                  <p className="text-navy-900 text-lg font-semibold">Ages 12-14</p>
+                </div>
+              </div>
+              <div className="md:w-2/3 p-8">
+                <h4 className="text-2xl font-heading font-bold text-white mb-4">
+                  Building the Foundation
+                </h4>
+                <p className="text-gray-300 leading-relaxed mb-4">
+                  The Launch stage focuses on establishing core beliefs and opening up
+                  communication. It&apos;s about creating a safe space for questions and
+                  starting conversations that will deepen over time.
+                </p>
+                <p className="text-gray-300 leading-relaxed">
+                  Perfect for early teens who are beginning to form their own beliefs
+                  and need guidance navigating new social dynamics, emotions, and faith questions.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Navigate Book */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="bg-navy-900 rounded-xl shadow-lg overflow-hidden border border-gold/20"
+          >
+            <div className="md:flex md:flex-row-reverse">
+              <div className="md:w-1/3 bg-gradient-to-br from-navigate-text to-navigate-accent p-8 flex items-center justify-center border-l border-gold/20">
+                <div className="text-center">
+                  <h3 className="text-4xl font-heading font-bold text-navy-900 mb-2">Navigate</h3>
+                  <p className="text-navy-900 text-lg font-semibold">Ages 14-16</p>
+                </div>
+              </div>
+              <div className="md:w-2/3 p-8">
+                <h4 className="text-2xl font-heading font-bold text-white mb-4">
+                  Going Deeper
+                </h4>
+                <p className="text-gray-300 leading-relaxed mb-4">
+                  The Navigate stage takes conversations deeper, addressing more complex
+                  questions and real-world challenges. It&apos;s about equipping teens to think
+                  critically and apply biblical wisdom to everyday situations.
+                </p>
+                <p className="text-gray-300 leading-relaxed">
+                  Ideal for mid-teens who are facing increased independence, peer pressure,
+                  dating questions, and need tools to navigate their expanding world.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Anchor Book */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="bg-navy-800 rounded-xl shadow-lg overflow-hidden border border-gold/20"
+          >
+            <div className="md:flex">
+              <div className="md:w-1/3 bg-anchor-bg p-8 flex items-center justify-center border-r border-gold/20">
+                <div className="text-center">
+                  <h3 className="text-4xl font-heading font-bold text-anchor-text mb-2">Anchor</h3>
+                  <p className="text-white text-lg font-semibold">Ages 16-18+</p>
+                </div>
+              </div>
+              <div className="md:w-2/3 p-8">
+                <h4 className="text-2xl font-heading font-bold text-white mb-4">
+                  Ready for Adulthood
+                </h4>
+                <p className="text-gray-300 leading-relaxed mb-4">
+                  The Anchor stage prepares teens for life beyond home. It addresses
+                  college, career, relationships, and how to maintain faith in a
+                  rapidly changing world with confidence and conviction.
+                </p>
+                <p className="text-gray-300 leading-relaxed">
+                  Essential for older teens preparing to leave home, face new freedoms,
+                  and need to solidify their beliefs before stepping into adulthood.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Topics by Focus Area */}
+      <section className="py-20 px-6 bg-navy-900">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
+              48 Topics Organized by Focus Area
+            </h2>
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+              Every topic appears in all three books, but the content evolves to match
+              your teen&apos;s developmental stage and real-world needs.
             </p>
-            <p className="text-xl font-heading font-semibold text-gold">
-              Start where you are. Go at your own pace. Make it fit your family.
-            </p>
+          </div>
+
+          <div className="space-y-4">
+            {topicsByFocusArea.map((focusArea) => (
+              <Disclosure key={focusArea.area}>
+                {({ open }) => (
+                  <div className="bg-white border-2 border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                    <Disclosure.Button className="flex justify-between items-center w-full px-6 py-4 bg-navy-900 hover:bg-navy-800 transition-colors">
+                      <span className="text-xl font-heading font-bold text-white">
+                        {focusArea.area}
+                      </span>
+                      <div className="flex items-center gap-2">
+                        <span className="text-sm text-gold font-semibold">
+                          {focusArea.topics.length} topics
+                        </span>
+                        <FiChevronDown
+                          className={`${
+                            open ? "transform rotate-180" : ""
+                          } transition-transform text-gold text-xl`}
+                        />
+                      </div>
+                    </Disclosure.Button>
+                    <Disclosure.Panel className="px-6 py-4 bg-white">
+                      <div className="grid md:grid-cols-2 gap-3">
+                        {focusArea.topics.map((topic) => (
+                          <div
+                            key={topic}
+                            className="flex items-center gap-2 text-navy-900"
+                          >
+                            <div className="w-2 h-2 bg-gold rounded-full"></div>
+                            <span>{topic}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </Disclosure.Panel>
+                  </div>
+                )}
+              </Disclosure>
+            ))}
           </div>
         </div>
       </section>
@@ -165,6 +386,48 @@ export default function AboutContent() {
                 description={area.description}
                 index={index}
               />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Content Structure */}
+      <section className="py-20 px-6 bg-navy-900">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
+              Every Topic Follows a Clear Structure
+            </h2>
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+              Each conversation guide walks you through five steps designed to
+              make discipleship natural, engaging, and practical.
+            </p>
+          </div>
+
+          <div className="flex flex-col md:flex-row items-stretch">
+            {contentStructure.map((item, index) => (
+              <React.Fragment key={item.step}>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="flex-1"
+                >
+                  <div className="bg-navy-900 text-white p-6 rounded-lg text-center h-full flex flex-col">
+                    <div className="text-gold text-4xl font-bold mb-2">{index + 1}</div>
+                    <h3 className="text-xl font-heading font-bold mb-3">{item.step}</h3>
+                    <p className="text-sm text-gray-300 leading-relaxed">{item.description}</p>
+                  </div>
+                </motion.div>
+                {index < contentStructure.length - 1 && (
+                  <div className="hidden md:flex items-center justify-center px-3">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                      <path d="M7 4L13 10L7 16" stroke="#c26d2e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                )}
+              </React.Fragment>
             ))}
           </div>
         </div>
@@ -231,48 +494,6 @@ export default function AboutContent() {
                 </tr>
               </tbody>
             </table>
-          </div>
-        </div>
-      </section>
-
-      {/* Content Structure */}
-      <section className="py-20 px-6 bg-navy-900">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-              Every Topic Follows a Proven Structure
-            </h2>
-            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-              Each conversation guide walks you through five steps designed to
-              make discipleship natural, engaging, and practical.
-            </p>
-          </div>
-
-          <div className="flex flex-col md:flex-row items-stretch">
-            {contentStructure.map((item, index) => (
-              <React.Fragment key={item.step}>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="flex-1"
-                >
-                  <div className="bg-navy-900 text-white p-6 rounded-lg text-center h-full flex flex-col">
-                    <div className="text-gold text-4xl font-bold mb-2">{index + 1}</div>
-                    <h3 className="text-xl font-heading font-bold mb-3">{item.step}</h3>
-                    <p className="text-sm text-gray-300 leading-relaxed">{item.description}</p>
-                  </div>
-                </motion.div>
-                {index < contentStructure.length - 1 && (
-                  <div className="hidden md:flex items-center justify-center px-3">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                      <path d="M7 4L13 10L7 16" stroke="#c26d2e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </div>
-                )}
-              </React.Fragment>
-            ))}
           </div>
         </div>
       </section>

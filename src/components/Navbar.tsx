@@ -16,7 +16,6 @@ export default function Navbar() {
         <nav className="hidden md:flex gap-8 items-center text-sm font-medium">
           <Link href="/" className="text-white hover:text-gold transition-colors">Home</Link>
           <Link href="/about" className="text-white hover:text-gold transition-colors">How It Works</Link>
-          <Link href="/series" className="text-white hover:text-gold transition-colors">Series</Link>
           <Link href="/contact" className="text-white hover:text-gold transition-colors">Contact</Link>
           <a
             href={amazonLink}
@@ -63,13 +62,6 @@ export default function Navbar() {
               className="text-white hover:text-gold transition-colors font-medium"
             >
               How It Works
-            </Link>
-            <Link
-              href="/series"
-              onClick={() => setOpen(false)}
-              className="text-white hover:text-gold transition-colors font-medium"
-            >
-              Series
             </Link>
             <Link
               href="/contact"
