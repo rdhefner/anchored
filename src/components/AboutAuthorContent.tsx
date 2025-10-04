@@ -45,7 +45,7 @@ export default function AboutAuthorContent() {
                 practical and spiritual areas of life.
               </p>
               <p className="text-gold font-semibold">
-                When he&apos;s not working or spending time with family, you&apos;ll find him playing drums,
+                When he&apos;s not working or spending time with family, you&apos;ll find him outdoors, playing drums,
                 managing a nonprofit soccer league, or tinkering with creative projects.
               </p>
             </div>
