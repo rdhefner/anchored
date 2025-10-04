@@ -17,6 +17,7 @@ export default function Navbar() {
           <Link href="/" className="text-white hover:text-gold transition-colors">Home</Link>
           <Link href="/about" className="text-white hover:text-gold transition-colors">How It Works</Link>
           <Link href="/resources" className="text-white hover:text-gold transition-colors">Resources</Link>
+          <Link href="/our-story" className="text-white hover:text-gold transition-colors">Our Story</Link>
           <Link href="/contact" className="text-white hover:text-gold transition-colors">Contact</Link>
           <a
             href={amazonLink}
@@ -70,6 +71,13 @@ export default function Navbar() {
               className="text-white hover:text-gold transition-colors font-medium"
             >
               Resources
+            </Link>
+            <Link
+              href="/our-story"
+              onClick={() => setOpen(false)}
+              className="text-white hover:text-gold transition-colors font-medium"
+            >
+              Our Story
             </Link>
             <Link
               href="/contact"

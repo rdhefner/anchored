@@ -6,10 +6,10 @@ export const metadata = {
   openGraph: {
     title: "Our Story | Anchored",
     description: "Meet Ryan Hefner, the creator of Anchored—a father committed to raising children of character and purpose.",
-    url: 'https://anchoredkids.org/about-author',
+    url: 'https://anchoredkids.org/our-story',
   },
   alternates: {
-    canonical: '/about-author',
+    canonical: '/our-story',
   },
 };
 
