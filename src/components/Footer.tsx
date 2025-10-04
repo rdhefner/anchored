@@ -1,7 +1,10 @@
 import Link from "next/link";
+import { FaInstagram, FaFacebookF } from "react-icons/fa";
 
 export default function Footer() {
   const amazonLink = process.env.NEXT_PUBLIC_AMAZON_SERIES_LINK || "https://amazon.com";
+  const instagramUrl = process.env.NEXT_PUBLIC_INSTAGRAM_URL || "";
+  const facebookUrl = process.env.NEXT_PUBLIC_FACEBOOK_URL || "";
 
   return (
     <footer className="bg-navy-900 text-white border-t border-gold/30 mt-16">
@@ -22,8 +25,45 @@ export default function Footer() {
             <div className="flex flex-col gap-2">
               <Link href="/" className="text-sm text-gray-300 hover:text-gold transition-colors">Home</Link>
               <Link href="/about" className="text-sm text-gray-300 hover:text-gold transition-colors">How It Works</Link>
-              <Link href="/series" className="text-sm text-gray-300 hover:text-gold transition-colors">Series</Link>
+              <Link href="/resources" className="text-sm text-gray-300 hover:text-gold transition-colors">Resources</Link>
               <Link href="/contact" className="text-sm text-gray-300 hover:text-gold transition-colors">Contact</Link>
+            </div>
+
+            {/* Social Media */}
+            <div className="mt-4">
+              <div className="flex gap-3">
+                {instagramUrl ? (
+                  <a
+                    href={instagramUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center hover:bg-gold hover:border-gold transition-all duration-300 group"
+                    aria-label="Instagram"
+                  >
+                    <FaInstagram className="text-gold group-hover:text-navy-900 text-lg transition-colors" />
+                  </a>
+                ) : (
+                  <div className="w-10 h-10 rounded-full bg-gray-700/30 border border-gray-600/30 flex items-center justify-center opacity-50 cursor-not-allowed" aria-label="Instagram - Coming Soon">
+                    <FaInstagram className="text-gray-500 text-lg" />
+                  </div>
+                )}
+
+                {facebookUrl ? (
+                  <a
+                    href={facebookUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center hover:bg-gold hover:border-gold transition-all duration-300 group"
+                    aria-label="Facebook"
+                  >
+                    <FaFacebookF className="text-gold group-hover:text-navy-900 text-lg transition-colors" />
+                  </a>
+                ) : (
+                  <div className="w-10 h-10 rounded-full bg-gray-700/30 border border-gray-600/30 flex items-center justify-center opacity-50 cursor-not-allowed" aria-label="Facebook - Coming Soon">
+                    <FaFacebookF className="text-gray-500 text-lg" />
+                  </div>
+                )}
+              </div>
             </div>
           </div>
 
